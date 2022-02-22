@@ -1,0 +1,227 @@
+/**************************** Animation Stylesheet ****************************/
+
+/****************************  START Page ****************************/
+
+.container {
+  width: 100%;
+  height: 200vh;
+}
+.start_background {
+  max-width: 200% !important;
+  width: 200%;
+  height: 100vh;
+  object-fit: cover;
+}
+.robot {
+  position: absolute;
+  left: -300px;
+  width: 261px;
+  height: 410px;
+  top: 320px;
+  z-index: 2;
+  
+}
+.shadow {
+  position: absolute;
+  left: -340px;
+  top: 620px;
+  width: 201px;
+  height: 350px;
+}
+.rightarm {
+  transform-origin: 200px 160px;
+}
+.rightarmshadow {
+  transform-origin: 185px 311px;
+}
+.welcomecontent {
+  position: absolute;
+  right: 360px;
+  top: -700px;
+}
+.startscreen {
+  width: 1100px;
+  height: 700px;
+}
+.welcometext {
+  opacity: 0;
+  position: relative;
+  top: -380px;
+  width: 600px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/****************************  Advice Page ****************************/
+
+.robot_projection img {
+  position: absolute;
+  top: 600px;
+  right: -900px;
+  opacity: 0;
+  z-index: 3;
+} 
+.pasted_advice svg {
+  position: absolute;
+  left: 640px;
+  top: 1220px;
+  width: 320px;
+  height: auto;
+  opacity: 0;
+  z-index: 3;
+}
+.iconbox div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  width: 750px;
+  right: 210px;
+  top: 1100px;
+}
+.advice_text {
+  position: absolute;
+  bottom: 850px;
+  right: 450px;
+  width: 500px;
+  z-index: 4;
+}
+
+/****************************  Visualization Page ****************************/
+.visual img:nth-child(5) {
+  bottom: 408px;
+  left: 689px;
+}
+.parachute {
+  position: absolute;
+  top: -100px;
+  left: -800px;
+}
+.visual_background {
+  position: absolute;
+  max-width: 100% !important;
+  width: 2400px;
+  left: -1450px;
+  bottom: 0;
+  z-index: -1;
+}
+.visual_text {
+  position: absolute;
+  right: 400px;
+  bottom: 900px;
+}
+.visual_projection {
+  width: 600px;
+  position: absolute;
+  bottom: 400px;
+  left: 510px;
+  z-index: 2;
+  opacity: 0;
+
+}
+.visual_projection_circle {
+  width: 420px;
+  position: absolute;
+  bottom: -420px;
+  left: 960px;
+  opacity: 0;
+}
+.visual_graphics svg {
+  position: absolute;
+  width: 220px;
+  z-index: 2;
+}
+.visual_graphics svg:nth-child(1) {
+  bottom: 496px;
+  left: 789px;
+  width: 220px;
+  opacity: 0;
+}
+.visual_graphics svg:nth-child(2) {
+  bottom: -280px;
+  left: 1070px;
+}
+.visual_graphics svg:nth-child(3) {
+  width: 250px;
+  bottom: -320px;
+  left: 1045px;
+}
+
+/****************************  Production Page ****************************/
+
+.production_text {
+  position: absolute;
+  right: 1050px;
+
+}
+.production_lever {
+  width: 220px;
+  position: absolute;
+  bottom: 260px;
+  right: -220px;
+}
+.production_lever .lever_stick{
+  transform-origin: 198px 118px;
+}
+.production_gears {
+  width: 660px;
+  position: absolute;
+  left: -660px;
+  bottom: 500px;
+  transform: scale(-1);
+}
+.production_gears g:nth-child(2) {
+  transform-origin: 60px 70.5px;
+}
+.production_gears g:nth-child(3) {
+  transform-origin: 40px 49.5px;
+}
+.production_gears g:nth-child(4) {
+  transform-origin: 60px 29.75px;
+}
+.production_bolts {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 1200px;
+  margin: 0 auto;
+}
+.production_bolts img {
+  position: relative;
+  bottom: -1500px; /* -720px */
+}
+.production_bolts img:nth-child(1) {
+  width: 360px;
+}
+.production_bolts img:nth-child(2) {
+  width: 250px;
+}
+.production_bolts img:nth-child(3) {
+  width: 320px;
+}
+.production_graphics div {
+  display: flex;
+  width: 1095px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.production_graphics div svg, .production_graphics div img {
+  position: relative;
+}
+.production_graphics div:nth-child(1) svg:nth-child(1), .production_graphics div:nth-child(2) svg:nth-child(1) {
+  bottom: -585px;
+}
+.production_graphics div:nth-child(1) svg:nth-child(2), .production_graphics div:nth-child(2) img {
+  bottom: -752px;
+}
+.production_graphics div:nth-child(1) svg:nth-child(3), .production_graphics div:nth-child(2) svg:nth-child(3) {
+  bottom: -558px;
+}
+
+
+.production_graphics svg {
+  width: 220px;
+}
+
+/*480*/
