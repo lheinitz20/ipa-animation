@@ -16,7 +16,6 @@ export default function Home() {
       autoplay: true
     });
 
-    /*
     basicTimeline
       .add({
         targets: '.Animation_start_background____vrL',
@@ -220,7 +219,6 @@ export default function Home() {
           duration: 500
         }, '+=500')
       }
-      */
       basicTimeline
       //Projektion, Texte und Grafik werden ausgeblendet
       .add({
@@ -269,18 +267,21 @@ export default function Home() {
         duration: 3000,
         easing: 'easeInOutQuad'
       }, '-=500')
+      //Runterscrollen
       .add({
         targets: 'body',
         translateY: '-1200px',
         duration: 2000,
         easing: 'easeInOutQuad'
       }, '-=5000')
+      //Hintergrund wird von links ins Bild geschoben
       .add({
         targets: '.Animation_visual_background__tuWMx',
         translateX: '1200px',
         duration: 1000,
         easing: 'easeInOutQuad'
       }, '-=4000')
+      //Projektion wird blinkend eingeblendet (mit Eigenschaft: Opacity)
       .add({
         targets: '.Animation_visual_projection__gNEFC',
         keyframes: [
@@ -293,12 +294,14 @@ export default function Home() {
         duration: 1500,
         easing: 'linear'
       }, '-=2000')
+      //Projektion nun dauerhaft eingeblendet
       .add({
         targets: '.Animation_visual_projection__gNEFC',
         opacity: 1,
         duration: 500,
         easing: 'easeOutExpo'
       }, '-=500 ')
+      //Projektion nun dauerhaft eingeblendet
       .add({
         targets: '.Animation_visual__O5frs img:nth-child(4)',
         opacity: 1,
@@ -535,13 +538,13 @@ export default function Home() {
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
         bottom: '-720px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(1)',
         bottom: '195px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(1)',
@@ -553,13 +556,13 @@ export default function Home() {
         targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
         bottom: '-720px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=3000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(2)',
         bottom: '28px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=3000')
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(2)',
@@ -571,13 +574,13 @@ export default function Home() {
         targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
         bottom: '-720px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(3)',
         bottom: '222px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(3)',
@@ -611,13 +614,13 @@ export default function Home() {
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
         bottom: '-1500px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(1)',
         bottom: '-585px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(3)',
@@ -629,13 +632,13 @@ export default function Home() {
         targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
         bottom: '-1500px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=3000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(2)',
         bottom: '-752px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=3000')
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(2)',
@@ -647,13 +650,13 @@ export default function Home() {
         targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
         bottom: '-1500px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(3)',
         bottom: '-558px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(1)',
@@ -672,11 +675,87 @@ export default function Home() {
 
       .add({
         targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
-        rotate: '-360deg',
+        rotate: '360deg',
         duration: 6000,
         direction: 'normal',
         easing: 'easeInOutSine'
       })
+      .add({
+        targets: '.Animation_production_gears__PF_DD g:nth-child(3)',
+        rotate: '-360deg',
+        duration: 6000,
+        direction: 'normal',
+        easing: 'easeInOutSine'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_gears__PF_DD g:nth-child(4)',
+        rotate: '360deg',
+        duration: 6000,
+        direction: 'normal',
+        easing: 'easeInOutSine'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
+        bottom: '-720px',
+        duration: 2000,
+        easing: 'easeInOutSine'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(1)',
+        bottom: '583px',
+        duration: 2000,
+        easing: 'easeInOutSine'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_text__7lHlM div span:nth-child(4)',
+        opacity: 1,
+        duration: 1500,
+        easing: 'easeOutExpo'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
+        bottom: '-720px',
+        duration: 2000,
+        easing: 'easeInOutSine'
+      }, '-=3000')
+      .add({
+        targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(2)',
+        bottom: '390px',
+        duration: 2000,
+        easing: 'easeInOutSine'
+      }, '-=3000')
+      .add({
+        targets: '.Animation_production_text__7lHlM div span:nth-child(5)',
+        opacity: 1,
+        duration: 1500,
+        easing: 'easeOutExpo'
+      }, '-=3000')
+      .add({
+        targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
+        bottom: '-720px',
+        duration: 2000,
+        easing: 'easeInOutSine'
+      }, '-=4000')
+      .add({
+        targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(3)',
+        bottom: '502px',
+        duration: 2000,
+        easing: 'easeInOutSine'
+      }, '-=4000')
+      .add({
+        targets: '.Animation_production_text__7lHlM div span:nth-child(6)',
+        opacity: 1,
+        duration: 1500,
+        easing: 'easeOutExpo'
+      }, '-=2000')
+
+      .add({
+        targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
+        rotate: '-360deg',
+        duration: 6000,
+        direction: 'normal',
+        easing: 'easeInOutSine'
+      }, '+=3000')
       .add({
         targets: '.Animation_production_gears__PF_DD g:nth-child(3)',
         rotate: '360deg',
@@ -693,58 +772,136 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
-        bottom: '-720px',
+        bottom: '-1500px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(1)',
-        bottom: '583px',
+        bottom: '-185px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=6000')
       .add({
-        targets: '.Animation_production_text__7lHlM div span:nth-child(4)',
-        opacity: 1,
+        targets: '.Animation_production_text__7lHlM div span:nth-child(6)',
+        opacity: 0,
         duration: 1500,
         easing: 'easeOutExpo'
       }, '-=6000')
-      .add({
-        targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
-        bottom: '-720px',
-        duration: 2000,
-        easing: 'linear'
-      }, '-=3000')
-      .add({
-        targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(2)',
-        bottom: '480px',
-        duration: 2000,
-        easing: 'linear'
-      }, '-=3000')
-      .add({
-        targets: '.Animation_production_text__7lHlM div span:nth-child(5)',
-        opacity: 1,
-        duration: 1500,
-        easing: 'easeOutExpo'
-      }, '-=3000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
-        bottom: '-720px',
+        bottom: '-1500px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(3)',
-        bottom: '516px',
+        bottom: '-275px',
         duration: 2000,
-        easing: 'linear'
+        easing: 'easeInOutSine'
       }, '-=4000')
       .add({
-        targets: '.Animation_production_text__7lHlM div span:nth-child(6)',
-        opacity: 1,
+        targets: '.Animation_production_text__7lHlM div span:nth-child(5)',
+        opacity: 0,
         duration: 1500,
         easing: 'easeOutExpo'
-      }, '-=2000')
+      }, '-=3000')
+      .add({
+        targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
+        bottom: '-962px',
+        duration: 2000,
+        easing: 'easeInOutSine'
+      }, '-=3000')
+      .add({
+        targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(2)',
+        //Hier wird eine Funktion aufgerufen, welche die Klasse 'animate-bounce' entfernt, somit hört der Ball auf hin und her zu springen
+        begin: function() {
+          document.querySelector('.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(2)').classList.remove('animate-bounce');
+        },
+        //Danach hüpft Ball nach oben aus dem Bild
+        translateY: '-1200px',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      }, '-=3000')
+      .add({
+        targets: '.Animation_production_text__7lHlM div span:nth-child(4)',
+        opacity: 0,
+        duration: 1500,
+        easing: 'easeOutExpo'
+      }, '-=3000')
+      .add({
+        targets: '.Animation_production_text__7lHlM h2',
+        opacity: 0,
+        duration: 1500,
+        easing: 'easeOutExpo'
+      }, '-=3000')
+
+      .add({
+        targets: '.Animation_robot__hEoHQ',
+        translateX: 1905,
+        duration: 3000,
+        easing: 'easeInOutSine',
+      }, '-=3000')
+      .add({
+        targets: '.Animation_shadow__qIreC',
+        translateX: 1875,
+        duration: 3000,
+        easing: 'easeInOutSine',
+      }, '-=3000')
+      .add({
+        targets: '#left_wheel, #right_wheel',
+        rotate: '-360deg',
+        duration: 3000,
+        direction: 'normal',
+        easing: 'linear',
+      }, '-=3000')
+      //Zahnräder drehen
+      .add({
+        targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
+        rotate: '360deg',
+        duration: 6000,
+        direction: 'normal',
+        easing: 'easeInOutSine'
+      })
+      .add({
+        targets: '.Animation_production_gears__PF_DD g:nth-child(3)',
+        rotate: '-360deg',
+        duration: 6000,
+        direction: 'normal',
+        easing: 'easeInOutSine'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_gears__PF_DD g:nth-child(4)',
+        rotate: '360deg',
+        duration: 6000,
+        direction: 'normal',
+        easing: 'easeInOutSine'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_gears__PF_DD',
+        bottom: '1300px',
+        duration: 4000,
+        direction: 'normal',
+        easing: 'easeInOutSine'
+      }, '-=6000')
+      .add({
+        targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
+        bottom: '-1500px',
+        duration: 1500,
+        easing: 'easeInOutSine'
+      }, '-=3000')
+      .add({
+        targets: '.Animation_robot__hEoHQ',
+        translateY: 1820,
+        duration: 1500,
+        easing: 'easeInOutSine',
+      }, '-=3000')
+      .add({
+        targets: '.Animation_shadow__qIreC',
+        translateY: 1825,
+        duration: 1500,
+        easing: 'easeInOutSine',
+      }, '-=3000')
 
       }, []);
 
@@ -932,6 +1089,7 @@ export default function Home() {
         <img className={styles.visual_projection_circle} src="/robot_graphic_projection_circle_asset.svg" alt="visual_projection_circle"></img>
         <img className={styles.visual_projection_circle} src="/robot_graphic_projection_circle_asset.svg" alt="visual_projection_circle"></img>
         
+        {/* Text zur Visualisierung */}
         <div className={styles.visual_text}>
           <h2 className="text-3xl font-light opacity-0">Visualisieren? Für uns kein Problem!</h2><br/>
           <div className="flex flex-col justify-between children:font-bold children:text-2xl children:opacity-0">
@@ -940,7 +1098,7 @@ export default function Home() {
             <span>Screen Designs</span>
           </div>
         </div>
-
+        {/* Container um Grafiken zur Visualisierung */}
         <div className={styles.visual_graphics}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302.88 309.57">
           <defs>
@@ -975,11 +1133,12 @@ export default function Home() {
               <span>Tonproduktion</span>
               <span>Videografie</span>
               <span>Vom Flyer bis zum Buch</span>
-              <span>Animationen</span>
               <span>Umfragen</span>
+              <span>Animationen</span>
             </div>
           </div>
 
+        {/* Hebel als SVG eingefügt */}
         <svg className={styles.production_lever} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 217.2 212">
           <style type="text/css">{`
             .st0l{fill:#FFFFFF;}
@@ -994,6 +1153,7 @@ export default function Home() {
           </g>
         </svg>
 
+        {/* Zahnräder als SVG eingefügt */}
         <svg className={styles.production_gears} version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
           viewBox="0 0 100 100">
         <style type="text/css">{`
@@ -1028,12 +1188,14 @@ export default function Home() {
         </g>
         </svg>
 
+        {/* Bolzen mithilfe des img-Tags eingefügt */}
         <div className={styles.production_bolts}>
           <img src="/graphics/bolt_b.svg" alt="big_bolt"></img>
           <img src="/graphics/bolt_s.svg" alt="small_bolt"></img>
           <img src="/graphics/bolt_m.svg" alt="medium_bolt"></img>
         </div>
 
+        {/* Container um die Grafiken zur Produktion */}
         <div className={styles.production_graphics}>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 372.2"><defs><style>{`.clsc-1{fill:#8188a6;}.clsc-2{fill:#f3f2ef;}.clsc-3{fill:#151c28;}`}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="clsc-1" y="40.28" width="540" height="331.93" rx="30.02"/><path class="clsc-1" d="M349.1,0H190.9A6.25,6.25,0,0,0,186,4c-1.5,3.72-11.08,48.4-11.08,48.4a12,12,0,0,0,12,12H353.12a12,12,0,0,0,12-12s-9.86-43.77-11-48.08A5.43,5.43,0,0,0,349.1,0Z"/><circle class="clsc-2" cx="270" cy="209.95" r="118.81"/><circle class="clsc-3" cx="270" cy="209.95" r="110.79"/><circle class="clsc-2" cx="270" cy="209.95" r="94.87"/><rect class="clsc-2" x="426.05" y="64.4" width="81.91" height="26.73" rx="11.9"/></g></g></svg>
@@ -1073,7 +1235,9 @@ export default function Home() {
             </div>
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.05 515.25"><defs><style>{`.clsf-1{fill:#f3f2ef;stroke-width:8px;}.clsf-1,.clsf-3{stroke:#1d1d1b;stroke-miterlimit:10;}.clsf-2{fill:#8188a6;}.clsf-3{fill:none;stroke-width:4px;}`}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="clsf-1" x="70.32" y="35.56" width="261.4" height="444.13" transform="translate(-72.99 79.58) rotate(-19.02)"/><rect class="clsf-1" x="70.32" y="35.56" width="261.4" height="444.13"/><polygon class="clsf-2" points="91.72 198.39 156.09 96.03 219.57 198.39 262.34 150.06 309.15 198.39 91.72 198.39"/><rect class="clsf-3" x="92.18" y="58.7" width="216.97" height="139.25"/><rect x="90.28" y="218.93" width="138.69" height="6.95" rx="3.48"/><rect x="90.28" y="236.2" width="190.92" height="6.95" rx="3.48"/><rect x="90.28" y="254.15" width="170.86" height="6.95" rx="3.48"/><rect x="90.28" y="272.1" width="218.88" height="6.95" rx="3.48"/><rect x="90.28" y="290.05" width="106.13" height="6.95" rx="3.48"/><rect x="90.28" y="308" width="170.86" height="6.95" rx="3.48"/><rect x="90.28" y="325.95" width="218.88" height="6.95" rx="3.48"/><rect x="90.28" y="343.9" width="106.13" height="6.95" rx="3.48"/><rect x="90.28" y="455.91" width="76.79" height="6.95" rx="3.48"/></g></g></svg>
-              <img src="/icons/icon_animation_1.gif" alt="icon_animation"></img>
+              
+              <svg className="animate-bounce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 369.07 369.1"><defs><style>{`.clsb-1{fill:#8188a6;}.clsb-2{fill:#fff;}`}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="clsb-1" d="M357.6,120.63A184.51,184.51,0,0,0,126.77,9.32C32.08,40.54-20.3,141.09,7.39,236.07Z"/><path class="clsb-1" d="M361.68,133,11.48,248.47C45.7,341.3,147.6,391,242.3,359.77S389.37,228,361.68,133Z"/><path class="clsb-2" d="M126.16,364.39c11.91-44.17,14.31-86.87,7.11-126.91a253,253,0,0,0-35.2-90.34C68.06,99.49,31.49,75.27,31.12,75l6.77-10.36c1.59,1,39.22,26,70.65,75.87a265,265,0,0,1,36.91,94.75c7.53,41.85,5.05,86.37-7.34,132.32Z"/><path class="clsb-2" d="M237.84,166.06a259.68,259.68,0,0,1-12.28-62c-4.28-57,10.68-98.15,11.32-99.87l11.25,4.17-5.62-2.08,5.62,2.08c-.14.4-14.77,40.79-10.56,95.32a244.85,244.85,0,0,0,24.75,90.49c17.47,35.23,43.9,67,78.56,94.51l-7.46,9.41c-36.15-28.67-63.74-62-82-98.9A254.47,254.47,0,0,1,237.84,166.06Z"/><rect class="clsb-2" x="-2.81" y="178.02" width="373.46" height="13.88" transform="translate(-48.56 66.67) rotate(-18.19)"/></g></g></svg>
+
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426 544"><defs><style>{`.clsu-1{fill:#8188a6;}.clsu-2{fill:#f3f2ef;}.clsu-3{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:4px;}.clsu-4{fill:#86c598;}`}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="clsu-1" width="426" height="544" rx="12"/><rect class="clsu-2" x="36.87" y="42.69" width="352.27" height="408.15" rx="12"/><rect x="152.94" y="73.31" width="205.94" height="6.95" rx="3.48"/><rect x="152.94" y="90.04" width="163.16" height="6.95" rx="3.48"/><rect x="152.94" y="106.77" width="181.9" height="6.95" rx="3.48"/><rect class="clsu-3" x="76.52" y="75.31" width="36.74" height="36.74" rx="12"/><rect x="152.94" y="147.19" width="90.95" height="6.95" rx="3.48"/><rect x="152.94" y="163.93" width="163.16" height="6.95" rx="3.48"/><rect x="152.94" y="180.66" width="181.9" height="6.95" rx="3.48"/><rect class="clsu-3" x="76.52" y="149.19" width="36.74" height="36.74" rx="12"/><rect x="152.94" y="223.08" width="138.69" height="6.95" rx="3.48"/><rect x="152.94" y="239.82" width="199.19" height="6.95" rx="3.48"/><rect x="152.94" y="256.55" width="81.58" height="6.95" rx="3.48"/><rect class="clsu-3" x="76.52" y="225.08" width="36.74" height="36.74" rx="12"/><rect x="152.94" y="300.97" width="107.77" height="6.95" rx="3.48"/><rect x="160.44" y="317.7" width="59.56" height="6.95" rx="3.48"/><rect x="152.94" y="334.44" width="181.9" height="6.95" rx="3.48"/><rect class="clsu-3" x="76.52" y="302.97" width="36.74" height="36.74" rx="12"/><rect class="clsu-4" x="84.86" y="225.36" width="7.05" height="28.62" rx="3.52" transform="translate(-120.24 92.26) rotate(-34.51)"/><rect class="clsu-4" x="104.36" y="201.25" width="7.05" height="55.03" rx="3.52" transform="translate(71.92 479.12) rotate(-146.58)"/></g></g></svg>
             </div>
 
