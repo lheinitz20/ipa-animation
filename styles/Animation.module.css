@@ -1,6 +1,6 @@
 /**************************** Animation Stylesheet ****************************/
 
-/****************************  START Page ****************************/
+/****************************  START Scene ****************************/
 
 .container {
   width: 100%;
@@ -52,7 +52,7 @@
   z-index: 2;
 }
 
-/****************************  Advice Page ****************************/
+/****************************  Advice Scene ****************************/
 
 .robot_projection img {
   position: absolute;
@@ -87,7 +87,7 @@
   z-index: 4;
 }
 
-/****************************  Visualization Page ****************************/
+/****************************  Visualization Scene ****************************/
 .visual img:nth-child(5) {
   bottom: 408px;
   left: 689px;
@@ -147,7 +147,7 @@
   left: 1045px;
 }
 
-/****************************  Production Page ****************************/
+/****************************  Production Scene ****************************/
 
 .production_text {
   position: absolute;
@@ -210,6 +210,9 @@
 .production_graphics div svg, .production_graphics div img {
   position: relative;
 }
+.production_graphics svg {
+  width: 220px;
+}
 .production_graphics div:nth-child(1) svg:nth-child(1) {
   bottom: -585px;
 }
@@ -229,9 +232,83 @@
   bottom: -275px;
 }
 
+/****************************  Future Scene ****************************/
 
-.production_graphics svg {
+.future_second_img img:nth-child(1) {
+  width: 400px;
+  position: absolute;
+  bottom: 805px;
+  left: 300px;
+  z-index: 2;
+  opacity: 0;
+}
+.future_second_img img:nth-child(2) {
+  position: absolute;
+  bottom: 80px;
+  width: 1950px;
+  right: 0;
+  opacity: 0;
+}
+.future_iconbox img {
+  position: absolute;
+  width: 180px;
+  opacity: 0;
+}
+.future_iconbox img:nth-child(1) {
+  bottom: 600px;
+  left: 900px;
+}
+.future_iconbox img:nth-child(2) {
+  bottom: 700px;
+  left: 1250px;
+}
+.future_iconbox img:nth-child(3) {
+  bottom: 400px;
+  left: 1470px;
+}
+.future_iconbox img:nth-child(4) {
+  bottom: 750px;
+  left: 1800px;
   width: 220px;
 }
+.future_iconbox img:nth-child(5) {
+  bottom: 350px;
+  left: 2150px;
+  width: 200px;
+}
+.future_text h2, .future_text div {
+  position: absolute;
+}
+.future_text h2 {
+  bottom: 1150px;
+  left: 256px;
+}
+.future_text div {
+  bottom: 200px;
+  left: 920px;
+}
 
-/*480*/
+/****************************  END Scene ****************************/
+
+.end_background {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+}
+.endcontent {
+  position: absolute;
+  right: 360px;
+  top: 300px;
+  opacity: 0;
+}
+.endscreen {
+  width: 1100px;
+  height: 700px;
+}
+.endtext {
+  position: absolute;
+  top: 380px;
+  left: 250px;
+  width: 600px;
+}
