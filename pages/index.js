@@ -1067,11 +1067,11 @@ export default function Home() {
             <h2 className="text-3xl font-light opacity-0">Wir beraten Sie gerne mit Profis in den Bereichen</h2><br/>
             {/* Auflistung der Bereiche & Styling durch div darüber mit children-Module */}
             <div className="children:font-bold children:text-2xl children:opacity-0">
-              <span>Fotografie</span><br/>
-              <span>IT-Infrastruktur</span><br/>
+              <span>Bildmedien</span><br/>
+              <span>Audiovsuelle Medien</span><br/>
               <span>Printmedien</span><br/>
+              <span>Interaktive Medien</span><br/>
               <span>Mediathek</span><br/>
-              <span>Eventtechnik</span><br/>
             </div>
           </div>
 
