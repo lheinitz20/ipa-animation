@@ -282,11 +282,11 @@ export default function Home() {
       //Roboter gleitet mit Fallschirm nach unten (Schatten zieht mit)
       .add({
         targets: '.Animation_robot__hEoHQ, .Animation_shadow__qIreC, .Animation_parachute__GZcRF',
-        translateY: '1760px',
+        translateY: '1785px',
         keyframes: [
           { translateX: '1100px'},
           { translateX: '900px'},
-          { translateX: '1100px'},
+          { translateX: '1095px'},
         ],
         duration: 4000,
         easing: 'easeInOutQuad'
@@ -346,7 +346,7 @@ export default function Home() {
         duration: 500,
         easing: 'easeOutExpo'
       }, '-=500 ')
-      //Projektion nun dauerhaft eingeblendet
+      //Grafiken und Texte werden nacheinander eingeblendet
       .add({
         targets: '.Animation_visual__O5frs img:nth-child(4)',
         opacity: 1,
@@ -424,8 +424,8 @@ export default function Home() {
         targets: '.Animation_visual_graphics__Z1AN_ svg:nth-child(2)',
         translateX: '0',
         translateY: '0',
-        left: '800px',
-        bottom: '547px',
+        left: '790px',
+        bottom: '487px',
         duration: 100
       })
       .add({
@@ -472,6 +472,7 @@ export default function Home() {
         duration: 1000,
         easing: 'linear'
       }, '-=500')
+      //Sekundärer Hintergrund wird über gesamte Seite gezogen
       .add({
         targets: '.background-container',
         width: '100%',
@@ -497,12 +498,14 @@ export default function Home() {
         direction: 'normal',
         easing: 'linear',
       }, '-=4000')
+      //Hebel kommt rechts aus dem Bild
       .add({
         targets: '.Animation_production_lever__rQ9gS',
         right: '-15px',
         duration: 1000,
         easing: 'linear'
       }, '-=2000')
+      //Roboter greift danach
       .add({
         targets: '#robot_right_arm',
         rotate: -140,
@@ -515,12 +518,14 @@ export default function Home() {
         duration: 2000,
         easing: 'easeInOutSine',
       })
+      //Hebel kippt nach unten
       .add({
         targets: '.Animation_lever_stick__NblGT',
         rotate: '-80deg',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=1000')
+      //Roboter geht ein Stück zur Seite
       .add({
         targets: '.Animation_robot__hEoHQ',
         translateX: 2850,
@@ -535,7 +540,7 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '300deg',
+        rotate: '800deg',
         duration: 3000,
         direction: 'normal',
         easing: 'linear',
@@ -552,12 +557,14 @@ export default function Home() {
         duration: 1500,
         easing: 'easeOutExpo'
       }, '-=500')
+      //Zahnräder erscheinen
       .add({
         targets: '.Animation_production_gears__PF_DD',
         left: '-260px',
         duration: 1000,
         easing: 'linear'
       }, '-=2500')
+      //Zahnräder drehen
       .add({
         targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
         rotate: '360deg',
@@ -579,6 +586,7 @@ export default function Home() {
         direction: 'normal',
         easing: 'easeInOutSine'
       }, '-=6000')
+      //Bolzen & Grafiken kommen aus dem Boden
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
         bottom: '-720px',
@@ -591,6 +599,7 @@ export default function Home() {
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
+      //Passender Text wird eingeblendet
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(1)',
         opacity: 1,
@@ -633,7 +642,6 @@ export default function Home() {
         duration: 1500,
         easing: 'easeOutExpo'
       }, '-=2000')
-
       .add({
         targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
         rotate: '-360deg',
@@ -711,13 +719,14 @@ export default function Home() {
       }, '-=2000')
       .add({
         targets: '.Animation_production_text__7lHlM div span:nth-child(1), .Animation_production_text__7lHlM div span:nth-child(2), .Animation_production_text__7lHlM div span:nth-child(3)',
+        //Funktion, welche die Eigenschaft "display" der drei Elemente auf "none" setzt und sie damit ausblendet
         begin: function() {
           document.querySelector('.Animation_production_text__7lHlM div span:nth-child(1)').style.display = 'none';
           document.querySelector('.Animation_production_text__7lHlM div span:nth-child(2)').style.display = 'none';
           document.querySelector('.Animation_production_text__7lHlM div span:nth-child(3)').style.display = 'none';
         },
       }, '-=1500')
-
+      //Wiederholung der vorherigen Abläufe
       .add({
         targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
         rotate: '360deg',
@@ -880,7 +889,7 @@ export default function Home() {
         duration: 1500,
         easing: 'easeOutExpo'
       }, '-=3000')
-
+      //Roboter geht auf letzten Bolzen
       .add({
         targets: '.Animation_robot__hEoHQ',
         translateX: 1905,
@@ -895,7 +904,7 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '-360deg',
+        rotate: '400deg',
         duration: 3000,
         direction: 'normal',
         easing: 'linear',
@@ -965,7 +974,7 @@ export default function Home() {
       }, '-=1000')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '-760deg',
+        rotate: '0deg',
         duration: 4000,
         direction: 'normal',
         easing: 'linear',
@@ -984,6 +993,7 @@ export default function Home() {
         duration: 1500,
         easing: 'easeInOutSine',
       }, '-=3000')
+      //Sekundärer Hintergrund und VR-Brille werden eingeblendet
       .add({
         targets: '.Animation_future_second_img__QFQym img:nth-child(1)',
         opacity: 1,
@@ -995,7 +1005,8 @@ export default function Home() {
         opacity: 1,
         duration: 1000,
         easing: 'linear'
-      })
+      }, '-=500')
+      //Texte und Icons werden nacheinander eingeblendet
       .add({
         targets: '.Animation_future_text__MOO2V h2',
         opacity: 1,
@@ -1062,6 +1073,7 @@ export default function Home() {
         duration: 1000,
         easing: 'linear'
       }, '-=1000')
+      //Gesamter Inhalt wird nacheinander wieder ausgeblendet
       .add({
         targets: '.Animation_future_iconbox__UnVDt img',
         opacity: 0,
@@ -1092,23 +1104,23 @@ export default function Home() {
         duration: 1000,
         easing: 'linear'
       }, '-=500')
-
+      //Roboter bewegt sich
       .add({
         targets: '.Animation_robot__hEoHQ',
         width: '261px',
         translateY: '1200px',
-        translateX: '500px', //1100px
+        translateX: '500px',
         duration: 1000,
         easing: 'easeInOutSine',
       }, '-=500')
       .add({
         targets: '.Animation_shadow__qIreC',
         translateY: '1206px',
-        translateX: '460px', //1060px
+        translateX: '460px',
         duration: 1000,
         easing: 'easeInOutSine',
       }, '-=500')
-
+      //Start-Szene wird wiederholt
       .add({
         targets: '.Animation_end_background__FIf7x',
         width: '100%',
@@ -1135,7 +1147,7 @@ export default function Home() {
       })
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '-600deg',
+        rotate: '300deg',
         duration: 2900,
         direction: 'normal',
         easing: 'linear',
@@ -1412,13 +1424,7 @@ export default function Home() {
           </defs>
           <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="clsg-1" d="M15,0H161.16a0,0,0,0,1,0,0V294.27a0,0,0,0,1,0,0H15a15,15,0,0,1-15-15V15A15,15,0,0,1,15,0Z"/><path className="clsg-2" d="M151.44,0H287.86a15,15,0,0,1,15,15V279.23a15,15,0,0,1-15,15H151.44a0,0,0,0,1,0,0V0A0,0,0,0,1,151.44,0Z"/><rect className="clsg-3" x="47.7" y="167.68" width="33.57" height="141.89" rx="12"/><ellipse className="clsg-4" cx="64.49" cy="137.62" rx="37.16" ry="44.26"/><rect className="clsg-4" x="58.1" y="190.2" width="14.43" height="71.34" rx="5.72"/><rect className="clsg-3" x="219.44" y="167.68" width="33.57" height="141.89" rx="12"/><ellipse className="clsg-4" cx="236.23" cy="137.62" rx="37.16" ry="44.26"/><rect className="clsg-4" x="229.84" y="190.2" width="14.43" height="71.34" rx="5.72"/></g><g id="stars_layer"><path className="clsg-5" d="M224.12,43.11a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M271.68,77.46a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M218.83,76.14a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M168,199.66a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M182.5,240a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M286.21,272.33a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M269,206.27a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M286.87,182.49a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M168.63,29.24a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M204.3,19.33a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M278.94,12.73a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M188.45,277a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M179.86,130.31a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M201.66,193.72a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M172.59,249.21a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M176.56,121.72a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-5" d="M156.08,63.59a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-6" d="M284.89,4.8a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-6" d="M255.16,61.61a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-6" d="M296.12,43.78a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/><path className="clsg-6" d="M158.06,162a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/></g></g></svg>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560.26 407.87">
-            <defs>
-              <style>
-                {`.clsv-1{fill:#8188a6;}.clsv-2{fill:#151c28;}.clsv-3{fill:#F3F2EF;}.clsv-4{fill:#d32947;}.clsv-5{fill:#73e5a2;}`}
-              </style>
-            </defs><g id="Layer_2" data-name="Layer 2"><g id="camera_film"><circle className="clsv-1" cx="269.22" cy="69.17" r="69.17"/><circle className="clsv-2" cx="269.22" cy="28.1" r="14.71"/><circle className="clsv-2" cx="228.15" cy="69.17" r="14.71"/><circle className="clsv-2" cx="269.22" cy="110.25" r="14.71"/><circle className="clsv-2" cx="310.3" cy="69.17" r="14.71"/></g><g id="Layer_1-2" data-name="Layer 1"><circle className="clsv-1" cx="124.32" cy="81.06" r="57.28"/><polygon className="clsv-1" points="549.67 156.88 549.67 276.21 549.67 395.54 446.33 335.87 342.99 276.21 446.33 216.54 549.67 156.88"/><rect className="clsv-1" y="165.08" width="425.85" height="242.79" rx="15"/><rect className="clsv-3" x="425.85" y="219.94" width="10.53" height="113.8" rx="5.26"/><rect className="clsv-3" x="544.4" y="155.88" width="15.85" height="240.91" rx="7.93"/><circle className="origin-camera-on clsv-4 animate-ping" cx="37.56" cy="202.22" r="15.05"/><circle className="clsv-4" cx="37.56" cy="202.22" r="15.05"/><circle className="clsv-5" cx="79.15" cy="202.22" r="15.05"/><rect className="clsv-2" x="69.97" y="140.35" width="271.93" height="24.73"/><rect className="clsv-3" x="278.86" y="328.96" width="121.16" height="55.28" rx="12"/><rect className="clsv-3" x="198.01" y="-0.48" width="15.85" height="279.8" rx="7.93" transform="translate(66.51 345.36) rotate(-90)"/><circle className="clsv-2" cx="124.32" cy="81.06" r="30.11"/></g></g>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.32 193.05"><defs><style>{`.clsa-1{fill:#b7caff;}.clsa-2{fill:#8188a6;}.clsa-3{fill:#fff;}`}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="clsa-1" x="11.25" y="54.75" width="51.83" height="131.86" rx="12"/><ellipse class="clsa-2" cx="37.16" cy="39.63" rx="37.16" ry="39.63"/><rect class="clsa-2" x="4.03" y="83.43" width="12.09" height="71.34" rx="5.72"/><rect class="cls-2" x="58.84" y="83.43" width="11.45" height="71.34" rx="5.72"/><circle class="clsa-3" cx="21.77" cy="28.7" r="7.93"/><circle class="clsa-3" cx="53.26" cy="28.7" r="7.93"/><rect class="cls-2" x="17.89" y="180.17" width="15.95" height="12.89" rx="6.44"/><rect class="clsa-2" x="40.49" y="180.17" width="15.95" height="12.89" rx="6.44"/></g></g></svg>
 
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504.66 414.3"><defs><style>{`.clss-1{fill:#f3f2ef;}.clss-2{fill:#8188a6;}.clss-3{fill:none;stroke:#1d1d1b;stroke-miterlimit:10;stroke-width:4px;}`}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect className="clss-1" x="192.88" y="325.65" width="118.9" height="78.44"/><rect className="clss-2" width="504.66" height="335.56" rx="12"/><rect className="clss-1" x="145.32" y="396.6" width="214.02" height="17.7" rx="8.85"/><rect className="clss-1" x="16.46" y="20.48" width="471.74" height="294.6" rx="12"/><polygon className="clss-2" points="38.46 125.7 78.06 62.73 117.11 125.7 143.41 95.96 172.22 125.7 38.46 125.7"/><rect className="clss-3" x="38.74" y="39.76" width="133.47" height="85.66"/><polygon className="clss-2" points="176.34 294.12 215.94 231.15 254.99 294.12 281.3 264.38 310.1 294.12 176.34 294.12"/><rect className="clss-3" x="176.62" y="208.18" width="133.47" height="85.66"/><rect x="36.55" y="147.58" width="137.53" height="5" rx="2.5"/><rect x="36.55" y="159.84" width="137.72" height="5" rx="2.5"/><rect x="36.62" y="172.11" width="137.72" height="5" rx="2.5"/><rect x="36.62" y="184.38" width="137.72" height="5" rx="2.5"/><rect x="36.62" y="196.65" width="120.22" height="5" rx="2.5"/><rect x="329.39" y="207.18" width="137.53" height="5" rx="2.5"/><rect x="329.39" y="219.45" width="137.72" height="5" rx="2.5"/><rect x="329.46" y="231.72" width="137.72" height="5" rx="2.5"/><rect x="329.46" y="243.99" width="137.72" height="5" rx="2.5"/><rect x="329.46" y="256.25" width="120.22" height="5" rx="2.5"/></g></g></svg>
 
