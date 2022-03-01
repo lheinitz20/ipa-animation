@@ -63,7 +63,7 @@
 } 
 .pasted_advice svg {
   position: absolute;
-  left: 640px;
+  left: 547px;
   top: 1220px;
   width: 320px;
   height: auto;
@@ -160,6 +160,7 @@
   position: absolute;
   bottom: 260px;
   right: -220px;
+  display: none;
 }
 .production_lever .lever_stick{
   transform-origin: 198px 118px;
@@ -312,4 +313,190 @@
   top: 380px;
   left: 250px;
   width: 600px;
+}
+
+
+/**************************** RESPONSIVE (for POI) ****************************/
+
+@media only screen and (max-width: 1921px) {
+
+  /****************************  START Scene ****************************/
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+  .start_background {
+    max-width: 200% !important;
+    width: 200%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .robot {
+    position: relative;
+    left: -300px;
+    width: 261px;
+    height: 410px;
+    top: -840px;
+    z-index: 2;
+  }
+  .shadow {
+    position: relative;
+    left: -340px;
+    top: -945px;
+    width: 201px;
+    height: 350px;
+  }
+  .rightarm {
+    transform-origin: 200px 160px;
+  }
+  .rightarmshadow {
+    transform-origin: 185px 311px;
+  }
+  .welcomecontent {
+    position: absolute;
+    right: 20%;
+    top: -750px;
+  }
+  .startscreen {
+    width: 700px;
+    height: 700px;
+  }
+  .welcometext {
+    opacity: 0;
+    position: relative;
+    top: -360px;
+    width: 500px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  /****************************  Advice Scene ****************************/
+
+  .robot_projection img {
+    position: relative;
+    left: 700px;
+    right: unset;
+    opacity: 0;
+    z-index: 3;
+    top: unset;
+    bottom: 1200px;
+  } 
+  .pasted_advice svg {
+    position: relative;
+    left: 550px;
+    top: unset;
+    width: 320px;
+    bottom: 2735px;
+    height: auto;
+    height: auto;
+    opacity: 0;
+    z-index: 3;
+  }
+  .iconbox div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 550px;
+    right: unset;
+    left: 1228px;
+    top: unset;
+    bottom: 3200px;
+  }
+  .advice_text {
+    position: relative;
+    bottom: 3175px;
+    width: 520px;
+    left: 1235px;
+    z-index: 4;
+  }
+
+  /****************************  Production Scene ****************************/
+
+  .production_text {
+    position: absolute;
+    right: 1050px;
+
+  }
+  .production_lever {
+    width: 220px;
+    position: absolute;
+    bottom: 260px;
+    right: -220px;
+    /* Korrektur */
+    display: none;
+  }
+  .production_lever .lever_stick{
+    transform-origin: 198px 118px;
+  }
+  .production_gears {
+    width: 660px;
+    position: absolute;
+    left: -660px;
+    bottom: 500px;
+    transform: scale(-1);
+  }
+  .production_gears g:nth-child(2) {
+    transform-origin: 60px 70.5px;
+  }
+  .production_gears g:nth-child(3) {
+    transform-origin: 40px 49.5px;
+  }
+  .production_gears g:nth-child(4) {
+    transform-origin: 60px 29.75px;
+  }
+  .production_bolts {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .production_bolts img {
+    position: relative;
+    bottom: -1500px;
+    z-index: -1;
+  }
+  .production_bolts img:nth-child(1) {
+    width: 360px;
+  }
+  .production_bolts img:nth-child(2) {
+    width: 250px;
+  }
+  .production_bolts img:nth-child(3) {
+    width: 320px;
+  }
+  .production_graphics div {
+    display: flex;
+    width: 1095px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .production_graphics div svg, .production_graphics div img {
+    position: relative;
+  }
+  .production_graphics svg {
+    width: 220px;
+  }
+  .production_graphics div:nth-child(1) svg:nth-child(1) {
+    bottom: -585px;
+  }
+  .production_graphics div:nth-child(2) svg:nth-child(1) {
+    bottom: -185px;
+  }
+  .production_graphics div:nth-child(1) svg:nth-child(2) {
+    bottom: -752px;
+  }
+  .production_graphics div:nth-child(2) svg:nth-child(2) {
+    bottom: -410px;
+  }
+  .production_graphics div:nth-child(1) svg:nth-child(3) {
+    bottom: -558px;
+  }
+  .production_graphics div:nth-child(2) svg:nth-child(3) {
+    bottom: -275px;
+  }
+
+  
 }
