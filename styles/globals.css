@@ -23,3 +23,10 @@ h1 {
   font-weight: 500;
   font-size: 36px;
 }
+
+/**************************** RESPONSIVE (for POI) ****************************/
+@media only screen and (max-width: 1921px) {
+  * {
+    font-size: unset;
+  }
+}
