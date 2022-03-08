@@ -14,13 +14,19 @@ export default function Home() {
       if(width > 1920) {
         // Wenn Seitenbreite grösser als '1920px' ist
         var walk = '700px';
+        var bigwalk = '3000px';
+        var backwardsP = '2850px';
         var robotsize = '2000px';
         var Yvalue = '-775px';
+        var gearsl = '-260px';
       } else {
         // Wenn Seitenbreite kleiner als '1920px' ist
         var walk = '600px';
+        var bigwalk = '1950px';
+        var backwardsP = '1850px';
         var robotsize = '1700px';
         var Yvalue = '-640px';
+        var gearsl = '-230px';
       }
 
     var basicTimeline = anime.timeline({
@@ -118,6 +124,10 @@ export default function Home() {
         easing: 'linear',
         autoplay: true
       }, '-=3000')
+      .add({
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateY: '1035px',
+      }, '-=1000')
       //Bildschirm wird mit Text zusammen wieder nach oben aus dem Bild geschoben
       .add({
         targets: '.Animation_welcomecontent__Gmo3P',
@@ -126,39 +136,16 @@ export default function Home() {
         easing: 'easeInOutSine'
       }, '-=2500')
             //Schatten des Roboters wird erstmal ausgeblendet
-            .add({
-              targets: '.Animation_shadow__qIreC',
-              opacity: 0,
-            })
+      .add({
+        targets: '.Animation_shadow__qIreC',
+        opacity: 0,
+      })
       .add({
         targets: '.Animation_start_background____vrL',
         duration: 2000,
         easing: 'easeInOutSine',
         opacity: 0
       }, '-=2000')
-      /* Scroll-Effekt anders ermöglichen oder auslassen
-      //In nächste Szene schieben
-      .add({
-        targets: 'body',
-        translateY: '-1000px',
-        duration: 1500,
-        easing: 'easeInOutQuad'
-      }, '-=1500')
-      .add({
-        targets: 'body',
-        translateY: '620px',
-        duration: 500,
-        easing: 'easeInOutQuad'
-      }, '-=500')
-      */
-      //Räder des Roboters drehen während dem hineinschieben
-      .add({
-        targets: '#left_wheel, #right_wheel',
-        rotate: '360',
-        duration: 3650,
-        direction: 'normal',
-        easing: 'linear',
-      }, '-=3000')
       //Roboter wird vergrössert und etwas nach links geschoben um Zoom-in Effekt zu erzeugen
       .add({
         targets: '.Animation_whole_robot__Xj3IE',
@@ -166,23 +153,13 @@ export default function Home() {
         translateX: 300,
         duration: 2000,
         easing: 'linear',
-      }, '-=3000')
+      }, '-=2000')
       .add({
         targets: '.Animation_robot__hEoHQ',
         width: robotsize, //translateX(310px) translateY(-617px), big size translateX(310px) translateY(-772px);
         duration: 2000,
         easing: 'linear'
       }, '-=2000')
-
-      /* Seitenverschiebung auslassen
-      //Seite wird dementsprechend verschoben um korrekten Ausschnitt darzustellen
-      .add({
-        targets: 'body',
-        translateY: '-780px',
-        duration: 2000,
-        easing: 'easeInOutQuad'
-      }, '-=2000')
-      */
       //Projektion des Roboters wird blinkend eingeblendet
       .add({
         targets: '.Animation_robot_projection__ODSlJ img',
@@ -277,7 +254,6 @@ export default function Home() {
         easing: 'easeOutExpo',
         duration: 500
       })
-      
       //Projektion, Texte und Grafik werden ausgeblendet
       .add({
         targets: '.Animation_pasted_advice__W4_nV svg, .Animation_pasted_advice_box__gsqIG div:nth-child(1), .Animation_advice_text__hmnr_, .Animation_robot_projection__ODSlJ img',
@@ -299,9 +275,12 @@ export default function Home() {
         easing: 'linear'
       })
       //Roboter gleitet mit Fallschirm nach unten (Schatten zieht mit)
-      
       .add({
-        targets: '.Animation_whole_robot__Xj3IE, .Animation_parachute__GZcRF',
+        targets: '.Animation_parachute__GZcRF',
+        opacity: 1
+      })
+      .add({
+        targets: '.Animation_whole_robot__Xj3IE',
         translateY: '450px',
         keyframes: [
           { translateX: '595px'},
@@ -311,22 +290,6 @@ export default function Home() {
         duration: 4000,
         easing: 'easeInOutQuad'
       }, '-=500')
-      /*
-      .add({
-        targets: 'html',
-        scrollTop: 2000,
-        /*complete: function scrolling() {
-          window.animate({scrollTop:2000},400);
-        },*/
-        /*
-        duration: 5000
-      }, '-=2000')
-      /*
-      .add({
-        targets: '.Animation_shadow__qIreC',
-        translateX: '1060'
-      })
-      */
       //Schatten wird wieder eingeblendet
       .add({
         targets: '.Animation_shadow__qIreC',
@@ -334,28 +297,17 @@ export default function Home() {
         duration: 500,
         easing: 'easeInOutQuad'
       }, '-=1000')
-      /*
       //Fallschirm geht wieder nach oben aus dem Bild
       .add({
         targets: '.Animation_parachute__GZcRF',
         scaleX: 0.2, 
         scaleY: 0.2, 
-        translateY: '-700',
+        translateY: '-3000',
         opacity: 0,
         duration: 3000,
         easing: 'easeInOutQuad'
       }, '-=500')
-      /*
-      //Runterscrollen
-      .add({
-        targets: 'body',
-        translateY: '-1200px',
-        duration: 2000,
-        easing: 'easeInOutQuad'
-      }, '-=5000')
-      */
       //Hintergrund wird von links ins Bild geschoben
-      
       .add({
         targets: '.Animation_visual_background__tuWMx',
         translateX: '1300px',
@@ -405,7 +357,6 @@ export default function Home() {
         duration: 1500,
         easing: 'easeOutExpo'
       }, '-=1000')
-    
       .add({
         targets: '.Animation_visual_text__2Aw9L div span:nth-child(1)',
         opacity: 1,
@@ -462,8 +413,8 @@ export default function Home() {
         targets: '.Animation_visual_graphics__Z1AN_ svg:nth-child(2)',
         translateX: '0',
         translateY: '0',
-        left: '790px',
-        bottom: '487px',
+        left: '690px',
+        bottom: '427px',
         duration: 100
       })
       .add({
@@ -512,20 +463,33 @@ export default function Home() {
       }, '-=500')
       //Sekundärer Hintergrund wird über gesamte Seite gezogen
       .add({
+        targets: '.Animation_whole_robot__Xj3IE',
+        begin: function() {
+          document.querySelector('.Animation_whole_robot__Xj3IE').style.position = 'absolute';
+        }
+      })
+      .add({
         targets: '.background-container',
+        begin: function() {
+          document.querySelector('.background-container').style.position = 'static';
+        },
         width: '100%',
         duration: 1500,
         easing: 'linear'
       })
       .add({
+        targets: '.Animation_production_bolts__BDfZN img',
+        opacity: 1
+      })
+      .add({
         targets: '.Animation_whole_robot__Xj3IE',
-        translateX: 3000,
+        translateX: bigwalk,
         duration: 4000,
         easing: 'easeInOutSine',
-      }, '-=1500')
+      }, '-=2500')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '1000deg',
+        rotate: '800deg',
         duration: 4000,
         direction: 'normal',
         easing: 'linear',
@@ -533,10 +497,14 @@ export default function Home() {
       //Hebel kommt rechts aus dem Bild
       .add({
         targets: '.Animation_production_lever__rQ9gS',
-        right: '-15px',
+        right: '-10px',
         duration: 1000,
         easing: 'linear'
       }, '-=2000')
+      .add({
+        targets: '.Animation_production_graphics__6LNkT svg',
+        opacity: 1
+      })
       //Roboter greift danach
       .add({
         targets: '#robot_right_arm',
@@ -559,20 +527,14 @@ export default function Home() {
       }, '-=1000')
       //Roboter geht ein Stück zur Seite
       .add({
-        targets: '.Animation_robot__hEoHQ',
-        translateX: 2850,
-        duration: 3000,
-        easing: 'easeInOutSine',
-      }, '-=3000')
-      .add({
-        targets: '.Animation_shadow__qIreC',
-        translateX: 2820,
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateX: backwardsP,
         duration: 3000,
         easing: 'easeInOutSine',
       }, '-=3000')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '800deg',
+        rotate: '600deg',
         duration: 3000,
         direction: 'normal',
         easing: 'linear',
@@ -592,7 +554,7 @@ export default function Home() {
       //Zahnräder erscheinen
       .add({
         targets: '.Animation_production_gears__PF_DD',
-        left: '-260px',
+        left: gearsl,
         duration: 1000,
         easing: 'linear'
       }, '-=2500')
@@ -617,17 +579,17 @@ export default function Home() {
         duration: 6000,
         direction: 'normal',
         easing: 'easeInOutSine'
-      }, '-=6000')
+      }, '-=6000') 
       //Bolzen & Grafiken kommen aus dem Boden
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
-        bottom: '-720px',
+        translateY: '-750px', //1920x1080
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(1)',
-        bottom: '195px',
+        translateY: '-750px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
@@ -640,13 +602,13 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
-        bottom: '-720px',
+        translateY: '-700px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=3000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(2)',
-        bottom: '28px',
+        translateY: '-700px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=3000')
@@ -658,13 +620,13 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
-        bottom: '-720px',
+        translateY: '-750px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(3)',
-        bottom: '222px',
+        translateY: '-750px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
@@ -697,13 +659,13 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
-        bottom: '-1500px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(1)',
-        bottom: '-585px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
@@ -715,13 +677,13 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
-        bottom: '-1500px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=3000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(2)',
-        bottom: '-752px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=3000')
@@ -733,13 +695,13 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
-        bottom: '-1500px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(1) svg:nth-child(3)',
-        bottom: '-558px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
@@ -782,13 +744,13 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
-        bottom: '-720px',
+        translateY: '-750px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(1)',
-        bottom: '583px',
+        translateY: '-750px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
@@ -800,13 +762,13 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
-        bottom: '-720px',
+        translateY: '-700px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=3000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(2)',
-        bottom: '390px',
+        bottom: '1560px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=3000')
@@ -818,13 +780,13 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
-        bottom: '-720px',
+        translateY: '-750px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(3)',
-        bottom: '502px',
+        translateY: '-750px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
@@ -834,7 +796,6 @@ export default function Home() {
         duration: 1500,
         easing: 'easeOutExpo'
       }, '-=2000')
-
       .add({
         targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
         rotate: '-360deg',
@@ -858,13 +819,13 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(1)',
-        bottom: '-1500px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(1)',
-        bottom: '-185px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=6000')
@@ -876,13 +837,13 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(3)',
-        bottom: '-1500px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
       .add({
         targets: '.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(3)',
-        bottom: '-275px',
+        translateY: '0',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=4000')
@@ -894,7 +855,7 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
-        bottom: '-962px',
+        translateY: '-510px',
         duration: 2000,
         easing: 'easeInOutSine'
       }, '-=3000')
@@ -905,7 +866,7 @@ export default function Home() {
           document.querySelector('.Animation_production_graphics__6LNkT div:nth-child(2) svg:nth-child(2)').classList.remove('animate-bounce');
         },
         //Danach hüpft Ball nach oben aus dem Bild
-        translateY: '-1200px',
+        translateY: '-2000px',
         duration: 1000,
         easing: 'easeInOutSine'
       }, '-=3000')
@@ -923,14 +884,8 @@ export default function Home() {
       }, '-=3000')
       //Roboter geht auf letzten Bolzen
       .add({
-        targets: '.Animation_robot__hEoHQ',
-        translateX: 1905,
-        duration: 3000,
-        easing: 'easeInOutSine',
-      }, '-=3000')
-      .add({
-        targets: '.Animation_shadow__qIreC',
-        translateX: 1875,
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateX: 1185,
         duration: 3000,
         easing: 'easeInOutSine',
       }, '-=3000')
@@ -972,60 +927,52 @@ export default function Home() {
       }, '-=6000')
       .add({
         targets: '.Animation_production_bolts__BDfZN img:nth-child(2)',
-        bottom: '-1500px',
-        duration: 1500,
+        translateY: '0',
+        duration: 3000,
         easing: 'easeInOutSine'
-      }, '-=3000')
-      /*
+      }, '-=4000')
       .add({
-        targets: '.Animation_robot__hEoHQ',
-        translateY: 1820,
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateY: '500px',
         duration: 1000,
         easing: 'easeInOutSine',
-      }, '-=3000')
-      .add({
-        targets: '.Animation_shadow__qIreC',
-        translateY: 1825,
-        duration: 1500,
-        easing: 'easeInOutSine',
-      }, '-=3000')
+      }, '-=4000')
       .add({
         targets: '.Animation_shadow__qIreC',
         opacity: 0,
       }, '-=500')
       .add({
-        targets: '.Animation_robot__hEoHQ',
-        translateX: 900,
-        duration: 4000,
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateX: 500,
+        duration: 3000,
         easing: 'easeInOutSine',
-      }, '-=1000')
-      .add({
-        targets: '.Animation_shadow__qIreC',
-        translateX: 870,
-        duration: 4000,
-        easing: 'easeInOutSine',
-      }, '-=1000')
+      }, '-=2000')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '0deg',
-        duration: 4000,
+        rotate: '-100deg',
+        duration: 3000,
         direction: 'normal',
         easing: 'linear',
-      }, '-=7000')
+      }, '-=3000')
       .add({
         targets: '.background-container',
-        left: '-100%',
+        translateX: '100%',
         duration: 2000,
         easing: 'easeInOutSine'
-      }, '-=2000')
+      }, '-=3000')
       //Der Roboter wird vergrössert (Zoom-in Effekt)
       .add({
-        targets: '.Animation_robot__hEoHQ, .Animation_shadow__qIreC',
-        width: '850px',
-        translateY: 1200,
+        targets: '.Animation_robot__hEoHQ',
+        width: '750px',
         duration: 1500,
         easing: 'easeInOutSine',
-      }, '-=3000')
+      })
+      .add({
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateY: '-35px',
+        duration: 1500,
+        easing: 'easeInOutSine',
+      }, '-=1500')
       //Sekundärer Hintergrund und VR-Brille werden eingeblendet
       .add({
         targets: '.Animation_future_second_img__QFQym img:nth-child(1)',
@@ -1139,20 +1086,18 @@ export default function Home() {
       }, '-=500')
       //Roboter bewegt sich
       .add({
-        targets: '.Animation_robot__hEoHQ',
-        width: '261px',
-        translateY: '1200px',
-        translateX: '500px',
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateY: '35px',
+        translateX: '-261px',
         duration: 1000,
         easing: 'easeInOutSine',
       }, '-=500')
       .add({
-        targets: '.Animation_shadow__qIreC',
-        translateY: '1206px',
-        translateX: '460px',
-        duration: 1000,
+        targets: '.Animation_robot__hEoHQ',
+        width: '220px',
+        duration: 3000,
         easing: 'easeInOutSine',
-      }, '-=500')
+      })
       //Start-Szene wird wiederholt
       .add({
         targets: '.Animation_end_background__FIf7x',
@@ -1167,14 +1112,8 @@ export default function Home() {
       })
       //Roboter fährt von links ins Bild
       .add({
-        targets: '.Animation_robot__hEoHQ',
-        translateX: 1100,
-        duration: 3000,
-        easing: 'easeInOutSine',
-      })
-      .add({
-        targets: '.Animation_shadow__qIreC',
-        translateX: 1060,
+        targets: '.Animation_whole_robot__Xj3IE',
+        translateX: walk,
         duration: 3000,
         easing: 'easeInOutSine',
       })
@@ -1184,12 +1123,12 @@ export default function Home() {
         duration: 2900,
         direction: 'normal',
         easing: 'linear',
-      }, '-=6000')
+      }, '-=3000')
       //Bildschirm mit Verabschiedungstext wird nach unten ins Bild geschoben
       .add({
         targets: '.Animation_endcontent__uyaSg',
-        top: '1142px',
-        duration: 2000,
+        top: '-100px',
+        duration: 3000,
         easing: 'easeInOutSine'
       }, '-=1000')
       //Roboter hebt seine rechte Hand
@@ -1231,7 +1170,6 @@ export default function Home() {
         duration: 4000,
         easing: 'easeInOutSine',
       }, '-=4000')
-
       //Der Verabschiedungstext auf dem Bildschirm wird eingeblendet
       .add({
         targets: '.Animation_endtext__dox20',
@@ -1245,7 +1183,7 @@ export default function Home() {
         opacity: 0,
         duration: 3000
       })
-      */
+      
       }, []);
 
   return (
@@ -1258,6 +1196,10 @@ export default function Home() {
       <img className={styles.start_background} src="/start_background.png" alt="start_background"></img>
       {/* Roboter eingefügt */}
       <div className={styles.whole_robot}>
+        <div className={styles.parachute} >
+          {/* Fallschirm Grafik eingefügt und mit TailwindCSS Tag Breite zugewiesen */}
+          <img className="w-64" src="/graphics/robot_parachute.svg" alt="parachute"></img>
+        </div>
         <div className={styles.robot}>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 351.1 440.9">
                 <g id="Layer_2" data-name="Layer 2">
@@ -1359,7 +1301,7 @@ export default function Home() {
           <img className={styles.startscreen} src="/graphics/screen_start_end.svg" alt="welcome_screen"></img>
           <div className={styles.welcometext}>
             <h1 className="font-bold text-4xl">Willkommen</h1><br/>
-            <p className="text-2xl">Ich begrüsse Sie im Zentrum der digitalen Medien der Armee!<br/><br/>
+            <p className="text-2xl">Ich begrüsse Sie im Zentrum digitale Medien der Armee!<br/><br/>
             Was tun wir?</p>
           </div>
         </div>
@@ -1413,7 +1355,7 @@ export default function Home() {
                   {/* Auflistung der Bereiche & Styling durch div darüber mit children-Module */}
                   <div className="flex flex-col justify-between children:font-bold children:text-2xl children:opacity-0">
                     <span>Bildmedien</span>
-                    <span>Audiovsuelle Medien</span>
+                    <span>Audiovisuelle Medien</span>
                     <span>Printmedien</span>
                     <span>Interaktive Medien</span>
                     <span>Mediathek</span>
@@ -1425,9 +1367,9 @@ export default function Home() {
 
            {/* Container um gesamte Szene "Visualisierung" */}
           <div className={styles.visual} >
-            <div className={styles.parachute} >
-              {/* Fallschirm Grafik eingefügt und mit TailwindCSS Tag Breite zugewiesen */}
-              <img className="w-64" src="/graphics/robot_parachute.svg" alt="parachute"></img>
+            <div className="relative -top-24 -left-96" >
+               {/* Dient nur als Platzhalter */}
+              <img className="w-64 opacity-0" src="/graphics/robot_parachute.svg" alt="parachute"></img>
             </div>
             <img className={styles.visual_background} src="/visual_secondary_background.png" alt="visual_background"></img>
             <img className={styles.visual_projection} src="/robot_graphic_projection_full.svg" alt="visual_projection"></img>
@@ -1461,7 +1403,7 @@ export default function Home() {
             </div>
             </div>
 
-             {/* Container um gesamte Szene "Produktion" */}
+        {/* Container um gesamte Szene "Produktion" */}
         <div className={styles.production}>
 
         {/* Text zur Produktion */}
@@ -1582,9 +1524,48 @@ export default function Home() {
         </div>
         </div>
         </div>
-          {/** Hier Rest wieder einfügen */}
+        {/* Container um gesamte Szene "Zukunftsmanagement" */}
+        <div className={styles.future}>
+          {/* VR-Brille eingefügt */}
+          <div className={styles.future_second_img}>
+            <img src="/graphics/vr_glasses.svg" alt="vr-glasses"></img>
+            {/* Sekundärer Hintergrund eingefügt */}
+            <img src="/future_secondary_background_asset.svg" alt="secondary-future-background"></img>
+         </div>
+          {/* Icons zum Thema "Zukunftsmanagement" eingefügt */}
+          <div className={styles.future_iconbox} >
+            <img src="/icons/apps.svg" alt="future_apps"></img>
+            <img src="/icons/virtual_reality.svg" alt="future_vr"></img>
+            <img src="/icons/motion_graphic.svg" alt="future_motion"></img>
+            <img src="/icons/3d.svg" alt="future_3D"></img>
+            <img src="/icons/e-publishing.svg" alt="future_e-publishing"></img>
+          </div>
+          {/* Text zum Zukunftsmanagement */}
+          <div className={styles.future_text} >
+            <h2 className="text-3xl font-light opacity-0">Wir gehen mit der Zeit...</h2><br/>
+            {/* Auflistung der Bereiche & Styling durch div darüber mit children-Module */}
+            <div className="flex flex-col justify-between children:font-bold children:text-2xl children:opacity-0">
+              <span>Apps</span>
+              <span>VR-Tours</span>
+              <span>Motion Graphics</span>
+              <span>3D-Modellierung</span>
+              <span>E-Publishing</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Container um gesamtes Ende */}
+        <img className={styles.end_background} src="/start_background.png" alt="end_background"></img>
+        <div className={styles.end}>
+          <div className={styles.endcontent}>
+            <img className={styles.endscreen} src="/graphics/screen_start_end.svg" alt="end_screen"></img>
+            <div className={styles.endtext}>
+              <h1 className="font-bold text-3xl">Bye!</h1><br/>
+              <p className="text-xl">Nun sind Sie über unsere Dienstleistungen aufgeklärt!</p>
+            </div>
+          </div>
+        </div>
 
     </div>
-
   )
   }
