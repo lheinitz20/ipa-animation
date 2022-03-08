@@ -1,30 +1,37 @@
 /**************************** Animation Stylesheet ****************************/
 
-/****************************  START Scene ****************************/
+/**************************** START Scene ****************************/
 
 .container {
   width: 100%;
   height: 200vh;
 }
 .start_background {
+  position: fixed;
   max-width: 200% !important;
   width: 200%;
   height: 100vh;
   object-fit: cover;
 }
-.robot {
-  position: absolute;
+.whole_robot {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 760px;
+  position: relative;
   left: -300px;
+  top: 320px;
+
+}
+.robot {
   width: 261px;
   height: 410px;
-  top: 320px;
   z-index: 2;
-  
 }
 .shadow {
-  position: absolute;
-  left: -340px;
-  top: 620px;
+  position: relative;
+  top: -110px;
+  left: -40px;
   width: 201px;
   height: 350px;
 }
@@ -52,19 +59,29 @@
   z-index: 2;
 }
 
-/****************************  Advice Scene ****************************/
+/**************************** Advice Scene ****************************/
 
 .robot_projection img {
-  position: absolute;
-  top: 600px;
+  position: fixed;
+  top: -100px;
   right: -900px;
   opacity: 0;
   z-index: 3;
+}
+.pasted_advice {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  position: relative;
+  left: 540px;
+  top: -370px;
+  width: 1700px;
 } 
+.pasted_advice_box {
+  display: flex;
+  flex-direction: column;
+}
 .pasted_advice svg {
-  position: absolute;
-  left: 547px;
-  top: 1220px;
   width: 320px;
   height: auto;
   opacity: 0;
@@ -80,14 +97,12 @@
   top: 1100px;
 }
 .advice_text {
-  position: absolute;
-  bottom: 850px;
   right: 450px;
   width: 500px;
   z-index: 4;
 }
 
-/****************************  Visualization Scene ****************************/
+/**************************** Visualization Scene ****************************/
 .visual img:nth-child(5) {
   bottom: 408px;
   left: 689px;
@@ -147,8 +162,7 @@
   bottom: -320px;
   left: 1045px;
 }
-
-/****************************  Production Scene ****************************/
+/**************************** Production Scene ****************************/
 
 .production_text {
   position: absolute;
@@ -160,7 +174,6 @@
   position: absolute;
   bottom: 260px;
   right: -220px;
-  display: none;
 }
 .production_lever .lever_stick{
   transform-origin: 198px 118px;
@@ -234,7 +247,7 @@
   bottom: -275px;
 }
 
-/****************************  Future Scene ****************************/
+/**************************** Future Scene ****************************/
 
 .future_second_img img:nth-child(1) {
   width: 400px;
@@ -290,7 +303,7 @@
   left: 920px;
 }
 
-/****************************  END Scene ****************************/
+/**************************** END Scene ****************************/
 
 .end_background {
   position: absolute;
@@ -316,11 +329,25 @@
 }
 
 
-/**************************** RESPONSIVE (for POI) ****************************/
+/**************************** RESPONSIVE ADDONS (for POI) ****************************/
 
 @media only screen and (max-width: 1921px) {
 
-  /****************************  START Scene ****************************/
+  /**************************** ROBOT ****************************/
+  .whole_robot {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 760px;
+    position: relative;
+    left: -300px;
+    top: 255px;
+    z-index: 2;
+
+  }
+
+
+  /**************************** START Scene ****************************/
   .container {
     width: 100%;
     height: 100vh;
@@ -330,19 +357,17 @@
     width: 200%;
     height: 100vh;
     object-fit: cover;
+    position: fixed;
   }
   .robot {
-    position: relative;
-    left: -300px;
     width: 261px;
     height: 410px;
-    top: -840px;
     z-index: 2;
   }
   .shadow {
     position: relative;
-    left: -340px;
-    top: -945px;
+    top: -110px;
+    left: -40px;
     width: 201px;
     height: 350px;
   }
@@ -354,7 +379,7 @@
   }
   .welcomecontent {
     position: absolute;
-    right: 20%;
+    right: 15%;
     top: -750px;
   }
   .startscreen {
@@ -370,8 +395,15 @@
     z-index: 2;
   }
 
-  /****************************  Advice Scene ****************************/
+  /**************************** Advice Scene ****************************/
 
+  .pasted_advice {
+    left: -95px;
+    top: unset;
+    width: 1700px;
+    bottom: -310px;
+    flex-direction: column;
+  }
   .robot_projection img {
     position: relative;
     left: 700px;
@@ -379,18 +411,30 @@
     opacity: 0;
     z-index: 3;
     top: unset;
-    bottom: 1200px;
+    bottom: 900px;
   } 
   .pasted_advice svg {
     position: relative;
     left: 550px;
     top: unset;
-    width: 320px;
+    width: 280px;
     bottom: 2735px;
     height: auto;
     height: auto;
     opacity: 0;
     z-index: 3;
+  }
+  .pasted_advice_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 550px;
+    height: 360px;
+    right: unset;
+    left: 1300px;
+    top: unset;
+    bottom: 3150px;
   }
   .iconbox div {
     display: flex;
@@ -405,32 +449,94 @@
   }
   .advice_text {
     position: relative;
-    bottom: 3175px;
+    right: unset;
     width: 520px;
-    left: 1235px;
     z-index: 4;
   }
 
-  /****************************  Production Scene ****************************/
+  /**************************** Visualization Scene ****************************/
+  .visual img:nth-child(5) {
+    bottom: 338px;
+    left: 589px;
+  }
+  .parachute {
+    position: absolute;
+    top: -250px;
+    left: -35px;
+    opacity: 0;
+    z-index: 1;
+  }
+  .visual_background {
+    position: absolute;
+    max-width: 100% !important;
+    width: 2400px;
+    left: -1450px;
+    bottom: 0;
+    z-index: 1;
+  }
+  .visual_text {
+    position: absolute;
+    right: 280px;
+    bottom: 800px;
+  }
+  .visual_projection {
+    width: 600px;
+    position: absolute;
+    bottom: 330px;
+    left: 410px;
+    z-index: 2;
+    opacity: 0;
+
+  }
+  .visual_projection_circle {
+    width: 420px;
+    position: absolute;
+    bottom: -490px;
+    left: 860px;
+    opacity: 0;
+    z-index: 1;
+  }
+  .visual_graphics svg {
+    position: absolute;
+    width: 220px;
+    z-index: 2;
+  }
+  .visual_graphics svg:nth-child(1) {
+    bottom: 426px;
+    left: 694px;
+    width: 220px;
+    opacity: 0;
+  }
+  .visual_graphics svg:nth-child(2) {
+    bottom: -400px;
+    left: 960px;
+    height: 250px;
+  }
+  .visual_graphics svg:nth-child(3) {
+    width: 250px;
+    bottom: -400px;
+    left: 945px;
+  }
+
+  /**************************** Production Scene ****************************/
 
   .production_text {
     position: absolute;
-    right: 1050px;
+    right: 750px;
+    top: 100px;
 
   }
   .production_lever {
-    width: 220px;
+    width: 200px;
     position: absolute;
-    bottom: 260px;
-    right: -220px;
-    /* Korrektur */
-    display: none;
+    bottom: 230px;
+    right: -200px;
   }
   .production_lever .lever_stick{
     transform-origin: 198px 118px;
   }
   .production_gears {
-    width: 660px;
+    width: 560px;
     position: absolute;
     left: -660px;
     bottom: 500px;
@@ -449,26 +555,27 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 1200px;
+    width: 1000px;
     margin: 0 auto;
   }
   .production_bolts img {
     position: relative;
-    bottom: -1500px;
-    z-index: -1;
+    bottom: 0px;
+    opacity: 0;
+    z-index: 1;
   }
   .production_bolts img:nth-child(1) {
-    width: 360px;
+    width: 310px;
   }
   .production_bolts img:nth-child(2) {
-    width: 250px;
+    width: 210px;
   }
   .production_bolts img:nth-child(3) {
-    width: 320px;
+    width: 270px;
   }
   .production_graphics div {
     display: flex;
-    width: 1095px;
+    width: 885px;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
@@ -477,26 +584,108 @@
     position: relative;
   }
   .production_graphics svg {
-    width: 220px;
+    opacity: 0;
+    width: 170px;
+    z-index: 2;
   }
   .production_graphics div:nth-child(1) svg:nth-child(1) {
-    bottom: -585px;
+    bottom: 745px;
   }
   .production_graphics div:nth-child(2) svg:nth-child(1) {
-    bottom: -185px;
+    bottom: 1020px;
   }
   .production_graphics div:nth-child(1) svg:nth-child(2) {
-    bottom: -752px;
+    bottom: 600px;
   }
   .production_graphics div:nth-child(2) svg:nth-child(2) {
-    bottom: -410px;
+    bottom: 860px;
   }
   .production_graphics div:nth-child(1) svg:nth-child(3) {
-    bottom: -558px;
+    bottom: 735px;
   }
   .production_graphics div:nth-child(2) svg:nth-child(3) {
-    bottom: -275px;
+    bottom: 955px;
   }
+  
+/**************************** Future Scene ****************************/
 
+  .future_second_img img:nth-child(1) {
+    width: 350px;
+    position: absolute;
+    bottom: 681px;
+    left: 288px;
+    z-index: 2;
+    opacity: 0;
+  }
+  .future_second_img img:nth-child(2) {
+    position: relative;
+    bottom: 2265px;
+    width: 1380px;
+    left: 540px;
+    opacity: 0;
+  }
+  .future_iconbox img {
+    position: absolute;
+    width: 140px;
+    opacity: 0;
+  }
+  .future_iconbox img:nth-child(1) {
+    bottom: 535px;
+    left: 740px;
+  }
+  .future_iconbox img:nth-child(2) {
+    bottom: 620px;
+    left: 990px;
+  }
+  .future_iconbox img:nth-child(3) {
+    bottom: 380px;
+    left: 1140px;
+  }
+  .future_iconbox img:nth-child(4) {
+    bottom: 650px;
+    left: 1390px;
+    width: 180px;
+  }
+  .future_iconbox img:nth-child(5) {
+    bottom: 310px;
+    left: 1620px;
+    width: 160px;
+  }
+  .future_text h2, .future_text div {
+    position: relative;
+  }
+  .future_text h2 {
+    bottom: 3080px;
+    left: 256px;
+  }
+  .future_text div {
+    bottom: 2570px;
+    left: 800px;
+  }
+  /**************************** END Scene ****************************/
+
+  .end_background {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    opacity: 0;
+  }
+  .endcontent {
+    position: absolute;
+    left: 850px;
+    top: -4100px;
+    opacity: 0;
+  }
+  .endscreen {
+    width: 700px;
+    height: 700px;
+  }
+  .endtext {
+    position: absolute;
+    top: 380px;
+    left: 130px;
+    width: 500px;
+  }
   
 }
+

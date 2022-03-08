@@ -6,6 +6,7 @@ html, body {
   padding: 0;
   margin: 0;
   background-color: #F3F2EF;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -16,7 +17,6 @@ a {
 * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
 }
 
 h1 {
