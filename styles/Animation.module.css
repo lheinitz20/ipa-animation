@@ -529,7 +529,7 @@
   .production_lever {
     width: 200px;
     position: absolute;
-    bottom: 230px;
+    bottom: 210px;
     right: -200px;
   }
   .production_lever .lever_stick{

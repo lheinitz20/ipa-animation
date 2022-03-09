@@ -22,7 +22,7 @@ export default function Home() {
       } else {
         // Wenn Seitenbreite kleiner als '1920px' ist
         var walk = '600px';
-        var bigwalk = '1950px';
+        var bigwalk = '1965px';
         var backwardsP = '1850px';
         var robotsize = '1700px';
         var Yvalue = '-640px';
@@ -171,7 +171,7 @@ export default function Home() {
          { opacity: 0 },
         ],
         duration: 1500
-      }, '-=500')
+      })
       //Projektion des Roboters wird dauerhaft eingeblendet
       .add({
         targets: '.Animation_robot_projection__ODSlJ img',
@@ -489,7 +489,7 @@ export default function Home() {
       }, '-=2500')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '800deg',
+        rotate: '700deg',
         duration: 4000,
         direction: 'normal',
         easing: 'linear',
@@ -534,7 +534,7 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '600deg',
+        rotate: '500deg',
         duration: 3000,
         direction: 'normal',
         easing: 'linear',
@@ -891,11 +891,15 @@ export default function Home() {
       }, '-=3000')
       .add({
         targets: '#left_wheel, #right_wheel',
-        rotate: '400deg',
+        rotate: '200deg',
         duration: 3000,
         direction: 'normal',
         easing: 'linear',
       }, '-=3000')
+      .add({
+        targets: '.Animation_shadow__qIreC',
+        opacity: 0
+      }, '-=300')
       //Zahnräder drehen
       .add({
         targets: '.Animation_production_gears__PF_DD g:nth-child(2)',
