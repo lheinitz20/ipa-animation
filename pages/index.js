@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../components/Header';
 import React, { useEffect } from 'react';
 import styles from '../styles/Animation.module.css';
 import anime from 'animejs';
@@ -1192,6 +1193,7 @@ export default function Home() {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <Header />
       <div className="fixed right-0 background-container w-0 h-full bg-secondary -z-10"></div>
       <img className={styles.start_background} src="/start_background.png" alt="start_background"></img>
       {/* Roboter eingefügt */}
