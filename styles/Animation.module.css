@@ -39,20 +39,19 @@
   transform: translateX(-300px);
 }
 .robot_projection {
-  width: 1600px;
+  width: 1700px;
   position: relative;
-  left: 710px;
+  left: 730px;
   transform: rotate(-70deg);
-  bottom: 911px;
+  bottom: 990px;
   opacity: 0;
 }
 .text {
   width: 760px;
   position: absolute;
   z-index: 2;
-  top: 160px;
-  left: 800px;
+  top: 120px;
+  right: 210px;
   opacity: 0;
 }
-
 
